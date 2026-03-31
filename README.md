@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🎮 Gaming Cafe Management System
 
 A web-based platform to manage gaming café bookings, pricing, and tournaments.
@@ -17,3 +18,5 @@ A web-based platform to manage gaming café bookings, pricing, and tournaments.
 
 ```bash
 npm install
+=======
+>>>>>>> a4bb5279b59941ea1970be7ebd7db0fc7e44e6b9
