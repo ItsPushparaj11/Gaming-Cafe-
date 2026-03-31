@@ -1,4 +1,3 @@
-import React from "react"
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
@@ -9,16 +8,16 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   title: "PixelArena Gaming Cafe | Premium Gaming Experience in Bengaluru",
   description:
-    "Experience gaming like never before at PixelArena - Bengaluru's premier gaming cafe with high-performance PCs, PS5 rooms, and racing simulators. Book your session now!",
+     "A web-based platform to manage gaming café bookings, pricing, and tournaments.",
   keywords: [
-    "gaming cafe",
-    "Bengaluru",
+    "gaming cafe Management",
+    "Booking System",
     "esports",
     "PC gaming",
     "PS5",
     "racing simulator",
   ],
-    generator: 'v0.app'
+    generator: 'Pushpa Raj Dhamala'
 };
 
 export const viewport: Viewport = {

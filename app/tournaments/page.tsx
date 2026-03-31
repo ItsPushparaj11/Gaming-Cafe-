@@ -1,9 +1,9 @@
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
-import { TournamentsHero } from "@/components/tournaments/tournaments-hero";
-import { UpcomingTournaments } from "@/components/tournaments/upcoming-tournaments";
-import { PastTournaments } from "@/components/tournaments/past-tournaments";
-import { TournamentCTA } from "@/components/tournaments/tournament-cta";
+import { Navigation } from "@/ui- components/navigation";
+import { Footer } from "@/ui- components/footer";
+import { TournamentsHero } from "@/ui- components/tournaments/tournaments-hero";
+import { UpcomingTournaments } from "@/ui- components/tournaments/upcoming-tournaments";
+import { PastTournaments } from "@/ui- components/tournaments/past-tournaments";
+import { TournamentCTA } from "@/ui- components/tournaments/tournament-cta";
 
 export const metadata = {
   title: "Tournaments | PixelArena Gaming Cafe",

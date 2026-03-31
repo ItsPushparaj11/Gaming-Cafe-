@@ -1,9 +1,9 @@
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
-import { ContactHero } from "@/components/contact/contact-hero";
-import { ContactInfo } from "@/components/contact/contact-info";
-import { BookingForm } from "@/components/contact/booking-form";
-import { LocationMap } from "@/components/contact/location-map";
+import { Navigation } from "@/ui- components/navigation";
+import { Footer } from "@/ui- components/footer";
+import { ContactHero } from "@/ui- components/contact/contact-hero";
+import { ContactInfo } from "@/ui- components/contact/contact-info";
+import { BookingForm } from "@/ui- components/contact/booking-form";
+import { LocationMap } from "@/ui- components/contact/location-map";
 
 export const metadata = {
   title: "Contact | PixelArena Gaming Cafe",

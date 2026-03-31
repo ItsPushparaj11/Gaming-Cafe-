@@ -1,9 +1,9 @@
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
-import { GamesHero } from "@/components/games/games-hero";
-import { PCGames } from "@/components/games/pc-games";
-import { PS5Games } from "@/components/games/ps5-games";
-import { RacingGames } from "@/components/games/racing-games";
+import { Navigation } from "@/ui- components/navigation";
+import { Footer } from "@/ui- components/footer";
+import { GamesHero } from "@/ui- components/games/games-hero";
+import { PCGames } from "@/ui- components/games/pc-games";
+import { PS5Games } from "@/ui- components/games/ps5-games";
+import { RacingGames } from "@/ui- components/games/racing-games";
 
 export const metadata = {
   title: "Games | PixelArena Gaming Cafe",

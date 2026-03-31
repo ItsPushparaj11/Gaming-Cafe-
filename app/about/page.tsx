@@ -1,9 +1,9 @@
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
-import { AboutHero } from "@/components/about/about-hero";
-import { OurStory } from "@/components/about/our-story";
-import { OurMission } from "@/components/about/our-mission";
-import { TheTeam } from "@/components/about/the-team";
+import { Navigation } from "@/ui- components/navigation";
+import { Footer } from "@/ui- components/footer";
+import { AboutHero } from "@/ui- components/about/about-hero";
+import { OurStory } from "@/ui- components/about/our-story";
+import { OurMission } from "@/ui- components/about/our-mission";
+import { TheTeam } from "@/ui- components/about/the-team";
 
 export const metadata = {
   title: "About Us | PixelArena Gaming Cafe",
