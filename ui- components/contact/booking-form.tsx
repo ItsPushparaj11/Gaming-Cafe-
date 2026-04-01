@@ -28,6 +28,7 @@ export function BookingForm() {
     zone: "",
     players: "",
     message: "",
+    representative: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
