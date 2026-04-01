@@ -14,7 +14,7 @@ const contactMethods = [
   {
     icon: Phone,
     title: "Call Us",
-    primary: "+91 98765 43210",
+    primary: "+91 7263020664",
     secondary: "Available during business hours",
     action: {
       label: "Call Now",
