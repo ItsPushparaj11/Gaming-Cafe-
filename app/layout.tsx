@@ -1,20 +1,24 @@
+import React from "react"
 import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "PixelArena Gaming Cafe | Premium Gaming Experience in Bengaluru",
   description:
-     "A web-based platform to manage gaming café bookings, pricing, and tournaments.",
+    "Experience gaming like never before at PixelArena - Bengaluru's premier gaming cafe with high-performance PCs, PS5 rooms, and racing simulators. Book your session now!",
   keywords: [
-    "gaming cafe Management",
-    "Booking System",
+    "gaming cafe",
+    "Bengaluru",
     "esports",
     "PC gaming",
     "PS5",
     "racing simulator",
   ],
-    generator: 'Pushpa Raj Dhamala'
+    generator: 'v0.app'
 };
 
 export const viewport: Viewport = {
@@ -30,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased">
+      <body className={`${inter.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>
