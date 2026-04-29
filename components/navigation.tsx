@@ -3,7 +3,15 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Gamepad2 } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Menu, X, Gamepad2, User, LogOut, Shield } from "lucide-react";
+import { useAuth } from "@/lib/auth-context";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -17,6 +25,7 @@ const navLinks = [
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, logout, isAdmin } = useAuth();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
@@ -46,14 +55,58 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button
-              asChild
-              className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25"
-            >
-              <Link href="/contact#booking">Book Now</Link>
-            </Button>
+          {/* Auth Buttons / User Menu */}
+          <div className="hidden md:flex items-center gap-3">
+            {user ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" className="flex items-center gap-2 border-border">
+                    <div className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center">
+                      <User className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-foreground">{user.name.split(" ")[0]}</span>
+                    {isAdmin && <Shield className="w-4 h-4 text-primary" />}
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48 bg-card border-border">
+                  <div className="px-2 py-1.5">
+                    <p className="text-sm font-medium text-foreground">{user.name}</p>
+                    <p className="text-xs text-muted-foreground">{user.email}</p>
+                  </div>
+                  <DropdownMenuSeparator className="bg-border" />
+                  {isAdmin && (
+                    <>
+                      <DropdownMenuItem asChild className="cursor-pointer">
+                        <Link href="/admin" className="flex items-center gap-2 text-foreground">
+                          <Shield className="w-4 h-4" />
+                          Admin Dashboard
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuSeparator className="bg-border" />
+                    </>
+                  )}
+                  <DropdownMenuItem
+                    onClick={logout}
+                    className="flex items-center gap-2 cursor-pointer text-destructive focus:text-destructive"
+                  >
+                    <LogOut className="w-4 h-4" />
+                    Sign Out
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <>
+                <Button variant="ghost" asChild className="text-muted-foreground hover:text-foreground">
+                  <Link href="/login">Sign In</Link>
+                </Button>
+                <Button
+                  asChild
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25"
+                >
+                  <Link href="/signup">Sign Up</Link>
+                </Button>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -81,15 +134,57 @@ export function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <div className="pt-4">
-              <Button
-                asChild
-                className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-              >
-                <Link href="/contact#booking" onClick={() => setIsOpen(false)}>
-                  Book Now
-                </Link>
-              </Button>
+            
+            {/* Mobile Auth Section */}
+            <div className="pt-4 border-t border-border mt-4 space-y-2">
+              {user ? (
+                <>
+                  <div className="px-4 py-2">
+                    <p className="text-sm font-medium text-foreground">{user.name}</p>
+                    <p className="text-xs text-muted-foreground">{user.email}</p>
+                  </div>
+                  {isAdmin && (
+                    <Link
+                      href="/admin"
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center gap-2 px-4 py-3 text-base font-medium text-primary hover:bg-secondary rounded-md transition-colors"
+                    >
+                      <Shield className="w-5 h-5" />
+                      Admin Dashboard
+                    </Link>
+                  )}
+                  <button
+                    onClick={() => {
+                      logout();
+                      setIsOpen(false);
+                    }}
+                    className="flex items-center gap-2 w-full px-4 py-3 text-base font-medium text-destructive hover:bg-secondary rounded-md transition-colors"
+                  >
+                    <LogOut className="w-5 h-5" />
+                    Sign Out
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full border-border"
+                  >
+                    <Link href="/login" onClick={() => setIsOpen(false)}>
+                      Sign In
+                    </Link>
+                  </Button>
+                  <Button
+                    asChild
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                  >
+                    <Link href="/signup" onClick={() => setIsOpen(false)}>
+                      Sign Up
+                    </Link>
+                  </Button>
+                </>
+              )}
             </div>
           </div>
         </div>
