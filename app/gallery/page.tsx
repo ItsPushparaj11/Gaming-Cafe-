@@ -1,8 +1,8 @@
-import { Navigation } from "@/ui- components/navigation";
-import { Footer } from "@/ui- components/footer";
-import { GalleryHero } from "@/ui- components/gallery/gallery-hero";
-import { GalleryGrid } from "@/ui- components/gallery/gallery-grid";
-import { GalleryCTA } from "@/ui- components/gallery/gallery-cta";
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { GalleryHero } from "@/components/gallery/gallery-hero";
+import { GalleryGrid } from "@/components/gallery/gallery-grid";
+import { GalleryCTA } from "@/components/gallery/gallery-cta";
 
 export const metadata = {
   title: "Gallery | PixelArena Gaming Cafe",
